@@ -43,16 +43,6 @@ export default function upload(option) {
     };
   }
 
-  var formData = new FormData();
-
-  if (option.data) {
-    Object.keys(option.data).forEach(function (key) {
-      formData.append(key, option.data[key]);
-    });
-  }
-
-  formData.append(option.filename, option.file);
-
   xhr.onerror = function error(e) {
     option.onError(e);
   };
@@ -87,7 +77,7 @@ export default function upload(option) {
       xhr.setRequestHeader(h, headers[h]);
     }
   }
-  xhr.send(formData);
+  xhr.send(option.file);
 
   return {
     abort: function abort() {
