@@ -23,10 +23,8 @@ node_modules
 dist
 assets/**/*.css
 build
-lib
 coverage
 yarn.lock
-es
 package-lock.json
 tmp/
 .history
